@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Off Canvas</title>
+</head>
+<body>
+    <div class="container">
+       <section id="sidepanel" class="menu ">
+         menu  
+       </section>
+       <section id="mainpanel" class="s1"> 
+            <div class="b"><h1>SECCIÓN 1</h1></div>   
+       </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+
+        var mainpanel = document.getElementById("mainpanel");
+        var sidepanel = document.getElementById("sidepanel")
+
+        var hammerpanel = new Hammer(mainpanel);
+        var hammerside = new Hammer(sidepanel);
+
+        hammerpanel.on("swiperight", function(){
+            sidepanel.classList.toggle("abierto");
+        });
+
+        hammerpanel.on("swipeleft", function(){
+            sidepanel.classList.toggle("abierto");
+        });
+        
+    }());
+    </script>
+</body>
+</html>
